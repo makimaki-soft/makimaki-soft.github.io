@@ -1,7 +1,18 @@
-.navbar-wrapper{
-	margin-top: 20px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
+header, footer{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #FFAF00;
+}
+
+div.logo {
+	padding-left: 50px;
+	height: 70px;
+}
+div.logo img {
+	width: 150px;
+}
+
+div.main {
+	padding-top: 30px;
 }
