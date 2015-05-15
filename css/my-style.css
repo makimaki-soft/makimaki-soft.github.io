@@ -1,8 +1,12 @@
 body {
-	font-family: Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Arial, Sans-serif
+	font-family: Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Arial, Sans-serif;
 }
 
-header, footer {
+a {
+	color: white;
+}
+
+header {
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -10,13 +14,62 @@ header, footer {
 	color: white;
 }
 
+footer {
+	width: 100%;
+	padding-top: 2px;
+	background-color: #FFAF00;
+	color: white;
+}
+
 div.logo {
-	height: 70px;
+	height: 50px;
 }
 div.logo img {
-	width: 150px;
+	width: 100px;
 }
 
 div.main {
 	padding-top: 30px;
+}
+
+nav.menu ul>li {
+	display: inline-block;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 15px;
+	font-family: 'Gotham SSm A','Gotham SSm B',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+div.promo img {
+	width: 100%;
+}
+
+div.info {
+#	background-color: #FFF9E5;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+div.section div, div.info-card div{
+	background-color: white;
+}
+
+div.info-card>div{
+	border-radius: 4px;
+	border: 1px solid #e1e1e8;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div.info-card img{
+	width: 100%;
+}
+
+div.info-card span{
+	font-weight: 600;
+}
+
+div.info-card p{
+	padding-top: 5px;
 }
