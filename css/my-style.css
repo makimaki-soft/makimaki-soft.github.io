@@ -21,6 +21,10 @@ footer {
 	color: white;
 }
 
+div.row {
+	width: 100%;
+}
+
 div.logo {
 	height: 50px;
 }
@@ -53,6 +57,13 @@ div.info {
 
 div.section div, div.info-card div{
 	background-color: white;
+}
+
+div.section h4{
+	color: #803F00;
+	border-left: 4px solid;
+	border-left-color: #803F00;
+	padding-left: 5px;
 }
 
 div.info-card {
