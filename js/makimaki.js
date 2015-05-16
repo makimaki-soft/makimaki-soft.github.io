@@ -14,6 +14,7 @@ InfoController.prototype.show = function(json) {
 	card_obj.querySelector("u").innerText = card_info.date;
 	card_obj.querySelector("p").innerHTML = card_info.body;
 	card_obj.querySelector("img").src = card_info.img;
+	card_obj.style.display =  "block";
 }
 
 // ---------------------------------------------------------
