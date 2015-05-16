@@ -31,14 +31,16 @@ PageController.prototype.init = function() {
 	var self = this;
 	$(window).on("hashchange", function() {
 		var hash = location.hash;
-		console.log(hash);
-
 		self.show_page(hash);
 	});
 }
 
 PageController.prototype.show_page = function(page) {
 	$(".page").hide();
+
+	if(page === "") {
+		page = "#home";
+	}
 	$("." + page.substr(1)).show();
 
 	if(page === "" || page === "#home") {
