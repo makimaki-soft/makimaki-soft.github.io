@@ -1,1 +1,1 @@
-# makimaki-soft.github.io
+# makimaki-soft no Home Page
