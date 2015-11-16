@@ -3,7 +3,7 @@ body {
 }
 
 a {
-	color: white;
+	color: #333333;
 }
 
 header {
@@ -41,8 +41,17 @@ nav.menu ul>li {
 	padding-top: 15px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+nav.menu ul>li>a {
+	color: #2D2D2D;
 	font-size: 15px;
 	font-family: 'Gotham SSm A','Gotham SSm B',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+div.promo img {
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 div.promo img {
@@ -66,10 +75,6 @@ div.section h4{
 	padding-left: 5px;
 }
 
-div.info-card {
-	display: none;
-}
-
 div.info-card>div{
 /*	border-radius: 4px; */
 /*	border: 1px solid #e1e1e8; */
@@ -87,6 +92,16 @@ div.info-card span{
 
 div.info-card p{
 	padding-top: 5px;
+}
+
+span.date {
+	margin-right: 10px;
+}
+
+
+#load-img {
+	display: block;
+	margin: 0 auto;
 }
 
 /* aboutページ用 */
