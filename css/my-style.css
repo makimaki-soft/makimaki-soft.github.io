@@ -14,11 +14,19 @@ header {
 	color: white;
 }
 
+/* footer*/
 footer {
-	width: 100%;
-	padding-top: 2px;
-	background-color: #FFAF00;
-	color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #D6D6D6;
+  text-align:center;
+}
+
+footer > span {
+  height: 120%;
 }
 
 div.row {
