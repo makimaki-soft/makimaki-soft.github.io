@@ -1,37 +1,9 @@
 // ---------------------------------------------------------
-// RSS処理用
-// ---------------------------------------------------------
-//APIのモジュールを読み込み
-google.load("feeds", "1");
-google.setOnLoadCallback(getRssFeed);
-
-function getRssFeed() {
-	var url = "http://ec2-54-69-49-117.us-west-2.compute.amazonaws.com/DevelopmentDiary/index.php/feed/";
-
-	//フィードの取得
-	var feed = new google.feeds.Feed(url);
-
-	//エントリの表示数の設定
-	feed.setNumEntries(3);
-
-	feed.load(function(result) {
-		if (!result.error) {
-			var info_controller = new InfoController();
-			info_controller.show(result.feed);
-		} else {
-			//読み込みが失敗したときの処理
-			console.log(result.error.code + ":" + result.error.message);
-		}
-	});
-}
-
-// ---------------------------------------------------------
 // お知らせの表示処理用
 // ---------------------------------------------------------
 function InfoController() {}
 
 InfoController.prototype.show = function(data) {
-	console.log(data);
 
 	var item_box = document.querySelector("#info-list"),
 		fragment = document.createDocumentFragment(),
@@ -74,7 +46,6 @@ InfoController.prototype.show = function(data) {
 	}
 	item_box.appendChild(fragment);
 	$("#load-img").hide();
-	console.log(item_box);
 }
 
 InfoController.prototype.dateFormatter = function(date_str) {
@@ -121,6 +92,7 @@ PageController.prototype.show_page = function(page) {
 		page = "#home";
 	}
 	$("." + page.substr(1)).show();
+	$(page).css("text-decoration", "underline");
 }
 
 // ---------------------------------------------------------
@@ -129,3 +101,30 @@ $(function() {
 	var hash = location.hash;
 	page_controller.show_page(hash);
 });
+
+// ---------------------------------------------------------
+// RSS処理用
+// ---------------------------------------------------------
+//APIのモジュールを読み込み
+google.load("feeds", "1");
+google.setOnLoadCallback(getRssFeed);
+
+function getRssFeed() {
+	var url = "http://ec2-54-69-49-117.us-west-2.compute.amazonaws.com/DevelopmentDiary/index.php/feed/";
+
+	//フィードの取得
+	var feed = new google.feeds.Feed(url);
+
+	//エントリの表示数の設定
+	feed.setNumEntries(3);
+
+	feed.load(function(result) {
+		if (!result.error) {
+			var info_controller = new InfoController();
+			info_controller.show(result.feed);
+		} else {
+			//読み込みが失敗したときの処理
+			console.log(result.error.code + ":" + result.error.message);
+		}
+	});
+}
