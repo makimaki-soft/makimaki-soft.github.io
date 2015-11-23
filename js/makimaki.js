@@ -87,6 +87,10 @@ PageController.prototype.init = function() {
 
 PageController.prototype.show_page = function(page) {
 	$(".page").hide();
+	$(".menu li").each(function(){
+		console.log($(this));
+		$(this).css("text-decoration", "none");
+	});
 
 	if(page === "") {
 		page = "#home";
