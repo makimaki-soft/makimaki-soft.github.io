@@ -34,13 +34,17 @@ InfoController.prototype.show = function(data) {
 	template.appendChild(div);
 
 	for ( var i = 0; i < data.entries.length; i++ ) {
-		var item = template.cloneNode(true);
-
 		var entry = data.entries[i];
+		var imgsrc = /src="(.*?)"/igm.exec(entry.content);
+
+		var item = template.cloneNode(true);
 		item.href = entry.link;
 		item.querySelector(".date").textContent = this.dateFormatter(entry.publishedDate);
 		item.querySelector(".title").textContent = entry.title;
 		item.querySelector(".description").innerHTML = this.unescapeHTML(entry.contentSnippet).split("続きを読む")[0];
+		if(imgsrc != null) {
+			item.querySelector("img").src = imgsrc[1];
+		}
 		fragment.appendChild(item);
 		fragment.appendChild(document.createElement("hr"));
 	}
@@ -88,7 +92,6 @@ PageController.prototype.init = function() {
 PageController.prototype.show_page = function(page) {
 	$(".page").hide();
 	$(".menu li").each(function(){
-		console.log($(this));
 		$(this).css("text-decoration", "none");
 	});
 
